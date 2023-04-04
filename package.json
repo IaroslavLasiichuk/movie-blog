@@ -1,0 +1,31 @@
+{
+  "name": "movie-blog",
+  "version": "1.0.0",
+  "description": "Project for bootcamp",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node seeds/seed.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IaroslavLasiichuk/movie-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IaroslavLasiichuk/movie-blog/issues"
+  },
+  "homepage": "https://github.com/IaroslavLasiichuk/movie-blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "mysql2": "^3.2.0",
+    "sequelize": "^6.30.0"
+  }
+}
