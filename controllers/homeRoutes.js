@@ -1,14 +1,17 @@
 const router = require('express').Router();
+const withAuth = require('../utilis/auth');
 
-router.get('/movie', async (req, res) => {
+//  Use withAuth middleware to prevent access to route
+router.get('/movie', withAuth, async (req, res) => {
   try {
     res.render('movie', {
-      logged_in: req.session.logged_in 
-    });
+      logged_in: req.session.logged_in
+   });
   } catch (err) {
-    res.status(500).json(err);
+ res.status(500).json(err);
   }
 });
+
 
 // GET home page with login form
 router.get('/login', async (req, res) => {
