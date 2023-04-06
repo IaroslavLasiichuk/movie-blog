@@ -8,10 +8,13 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <main>
-      <nav class="navbar navbar-expand-lg bg-dark">
+    <nav class="navbar navbar-expand-lg bg-dark">
    <div class="container-fluid">
+<<<<<<< HEAD
     <a class="navbar-brand text-light" href="/">Movie Dudes</a>
+=======
+    <a class="navbar-brand text-light" href="/login">TechBLOG</a>
+>>>>>>> 53ffb8050ea520bf207e7616b8b4a77405f204b1
     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -20,18 +23,19 @@
         <li class="nav-item">
           <a class="nav-link active text-light" aria-current="page" href="/login">Home</a>
         </li>
-           
+             <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
         <li class="nav-item">
-          <a class="nav-link active text-light" aria-current="page" href="/">Movie</a>
+          <a class="nav-link active text-light" aria-current="page" href="/movie">Movie</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-light" aria-current="page" href="/">Blog</a>
+          <a class="nav-link active text-light" aria-current="page" href="/blog">Blog</a>
         </li>
-            
+        
         <li class="nav-item">
-          <a class="nav-link active text-light" id="logout" aria-current="page" href="/">Logout</a>
+          <button class="nav-link active text-light" id="logout">Logout</button>
         </li>
-    
+         {{/if}}
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -40,6 +44,7 @@
     </div>
   </div>
 </nav>
+    <main>
           {{{ body }}}
     </main>
        <footer class="bg-dark text-white fixed-bottom">
@@ -47,6 +52,10 @@
             <div class=" text-center small align-item-end">© Movie Dudes, Inc.</div>
     </div>
     </footer>
+      <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
      integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
