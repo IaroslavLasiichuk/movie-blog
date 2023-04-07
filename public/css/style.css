@@ -20,3 +20,45 @@ color: whitesmoke;
 #movie {
     color: whitesmoke;
 }
+
+#description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0.1vh;
+    flex-direction: column;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20vh;
+    padding-bottom: 5vh;
+    flex-direction: column;
+}
+
+
+.container{
+    border-radius: 10px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    background-color: rgb(16, 16, 16);
+    box-shadow: 10px 5px 5px rgb(37, 37, 37);
+}
