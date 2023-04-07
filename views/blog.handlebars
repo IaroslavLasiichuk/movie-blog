@@ -7,7 +7,7 @@
   Blog
   </div>
 
-  <div class="card-body">
+  <div class="card-body ">
     <div class="mb-3">
   <label for="exampleFormControlInput1" class="text-dark fs-2">What are you thinking?</label>
   <input type="text" class="form-control" id="post-title" placeholder="Post Title">
@@ -24,23 +24,23 @@
 </div>
  
 </div>
-  {{#if posts.length}}
+ {{!-- {{#if posts.length}} --}}
   <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
-    {{#each posts as |post|}}
+  
+    {{!-- {{#each posts as |post|}} --}}
+      <h3>Current Projects:</h3>
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{post.id}}">{{post.title}}</a></h4>
+        <h4><a href="/project/{{post.id}}">{{post}}</a>{{posts}}</h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger " data-id="{{post.id}}">{{post}}</button>
       </div>
     </div>
-    {{/each}}
+    {{!-- {{/each}} --}}
   </div>
- 
 </div>
- {{/if}}
+ {{!-- {{/if}} --}}
 </form>
 
 <script src="./js/profile.js"></script>

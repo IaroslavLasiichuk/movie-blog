@@ -1,0 +1,14 @@
+[
+  {
+    "blog_title": "Music Near Me",
+    "blog_content": "A mobile app that will send you notifications whenever a concert is playing in your area."
+  },
+  {
+    "blog_title": "The Ultimate Tech Quiz",
+    "blog_content": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
+  },
+  {
+    "blog_title": "Roll 'Em Up",
+    "blog_content": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
+  }
+]
