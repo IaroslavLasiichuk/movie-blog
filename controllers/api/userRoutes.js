@@ -1,13 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-router.get('/', async (req, res) => {
-  try {
-   res.render('logged');
-  } catch (err) {
- res.status(500).json(err);
-  }
-});
 
 router.post('/', async (req, res) => {
   try {

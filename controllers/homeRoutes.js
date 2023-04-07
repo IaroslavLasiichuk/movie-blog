@@ -1,10 +1,19 @@
 const router = require('express').Router();
+const { Blog } = require('../models/Blog');
 const withAuth = require('../utilis/auth');
+
+router.get('/', async (req, res) => {
+  try {
+    res.render('home');
+  } catch (err) {
+ res.status(500).json(err);
+  }
+});
 
 //  Use withAuth middleware to prevent access to route
 router.get('/movie', withAuth, async (req, res) => {
   try {
-    res.render('movie', {
+    res.render('movie',{
       logged_in: req.session.logged_in
    });
   } catch (err) {
@@ -12,28 +21,31 @@ router.get('/movie', withAuth, async (req, res) => {
   }
 });
 
+//  Use withAuth middleware to prevent access to route
+router.get('/blog', withAuth, async (req, res) => {
+  try {
+    res.render('blog',{
+      logged_in: req.session.logged_in
+   });
+  } catch (err) {
+   return  res.status(500).json(err);
+  }
+});
 
 // GET home page with login form
 router.get('/login', async (req, res) => {
     try {
-     res.render('home');
-    } catch (err) {
-   res.status(500).json(err);
-    }
-});
-// GET home page with login form
-router.get('/blog', async (req, res) => {
-    try {
-     res.render('blog');
+      res.render('login');
     } catch (err) {
    res.status(500).json(err);
     }
 });
 
+
 // GET sign up page
 router.get('/signup', async (req, res) => {
     try {
-     res.render('signup');
+      res.render('signup');
     } catch (err) {
    res.status(500).json(err);
     }

@@ -1,19 +1,46 @@
+<form class="form-post">
 <div class="container mt-3">
     <h1 class="text-center">Create post</h1>
+    <p class="text-white text-center">Some subtitle</p>
     <div class="card text-center">
   <div class="card-header">
   Blog
   </div>
+
   <div class="card-body">
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="text-dark">Title</label>
+  <input type="text" class="form-control" id="post-title" placeholder="Title">
+</div>
   <div class="form-floating">
-  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-  <label for="floatingTextarea2">Write post</label>
+  <textarea class="form-control" placeholder="Leave a comment here" id="post-content" style="height: 100px"></textarea>
+  <label class="text-dark" for="floatingTextarea2">Write post</label>
   <div class="card-footer text-body-secondary">
     </div>
-    <button type="button" class="btn btn-outline-primary">Add post</button>
-  </div>
-    2 days ago
+    <button type="submit" class="btn btn-outline-primary">Add post</button>
+  </div >
+    <p class="text-dark">2 days ago</p> 
   </div>
 </div>
  
 </div>
+  {{#if posts.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Projects:</h3>
+    {{#each posts as |post|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{post.id}}">{{post.title}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+ 
+</div>
+ {{/if}}
+</form>
+
+<script src="./js/profile.js"></script>
