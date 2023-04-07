@@ -1,5 +1,5 @@
 // Variables
-const searchButton = document.querySelector('.btn-search');
+const searchButton = document.querySelector('#btn-search');
 const modal = document.querySelector('.modal');
 const errorMessage = document.querySelector('.modal-err ');
 const closeMessageBox = document.querySelector('.delete');
@@ -9,14 +9,15 @@ const closeModal = document.querySelector('.modal-close');
 let movieId = localStorage.getItem('movieId');
 
 // Start search
-searchButton.addEventListener('click', function () {
-    let searchText = document.querySelector('input-search-movie').value;
+searchButton.addEventListener('click', function (event) {
+    let searchText = document.querySelector('#input-search-text').value;
     getMovie(searchText);
+    event.preventDefault();
 })
 
 // Search for movie and get data 
 function getMovie(searchText) {
-    fetch(`https://www.omdbapi.com/?apikey=d5dbe20a&s=${searchText}&plot`)
+    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=ca2803b5&s=${searchText}&plot`)
         .then(function (response) {
             return response.json();
         })
@@ -24,7 +25,6 @@ function getMovie(searchText) {
             let movies = data.Search;
             for (let i = 0; i < movies.length; i++) {
                 let title = movies[i].Title;
-                localStorage.setItem('movieId', title);
                 let titleForAttribute = title.replace(/["" & :]/g, '-');
                 let parent = document.querySelector('.main');
                 parent.innerHTML += `
@@ -34,12 +34,11 @@ function getMovie(searchText) {
                     <figure>
                     <img src="${movies[i].Poster} alt="${"Poster for"}${movies[i].Title}"></figure> 
                     <a href="http://imdb.com/title/${movies[i].imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
-                    <button class="button buttons is-info" id=${titleForAttribute} data-title = ${titleForAttribute}>Add to list</button>
                 </article>`
             }
         })
         .catch((err) => {
-            showError(err);
+            // showError(err);
         });
     document.querySelector(".main").innerHTML = '';
 }
