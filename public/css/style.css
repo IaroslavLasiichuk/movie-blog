@@ -20,3 +20,20 @@ color: whitesmoke;
 #movie {
     color: whitesmoke;
 }
+
+#description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0.1vh;
+    flex-direction: column;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20vh;
+    padding-bottom: 5vh;
+    flex-direction: column;
+}
