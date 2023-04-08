@@ -1,12 +1,12 @@
 <form class="form-post">
 <div class="container mt-3">
     <h1 class="text-center">Create a post</h1>
-    <p class="text-white text-center">Tell us your thoughts!</p>
+      <h2 class="text-white">Welcome, {{user.name}}!</h2>
+    <p class="text-white text-center ">Tell us your thoughts!</p>
     <div class="card text-center">
-  <div class="card-header">
+  <div class="card-header bg-success">
   Blog
   </div>
-
   <div class="card-body ">
     <div class="mb-3">
   <label for="exampleFormControlInput1" class="text-dark fs-2">What are you thinking?</label>
@@ -18,29 +18,25 @@
   <div class="card-footer text-body-secondary">
     </div>
     <button type="submit" class="btn btn-outline-primary">Add post</button>
-  </div >
-    <p class="text-dark">2 days ago</p> 
+</div>
+</div>
+   <h2 class="text-black text-center">Reviews</h2>
+{{#each blogs as |blog|}}
+<div class="card text-center blog-list w-50 container mt-3 mb-5 bg-dark opacity-80">
+  <div class="card-header bg-success">
   </div>
-</div>
- 
-</div>
- {{!-- {{#if posts.length}} --}}
-  <div class="col-md-6 project-list">
+  <div class="card-body row justify-content-center">
+    <h5 class="card-title text-white">{{blog.blog_title}}</h5>
+    <p class="card-text text-white">{{blog.blog_content}}</p>
+     <textarea class="form-control" placeholder="Edit post" id="post-content-edit" style="height: 100px"></textarea>
+       <button data-id="{{blog.id}}" class="btn btn-edit btn-primary mt-2">Edit</button>
+    <button data-id="{{blog.id}}" class="btn btn-danger mt-2">Delete</button>
   
-    {{!-- {{#each posts as |post|}} --}}
-      <h3>Current Projects:</h3>
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{post.id}}">{{post}}</a>{{posts}}</h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger " data-id="{{post.id}}">{{post}}</button>
-      </div>
-    </div>
-    {{!-- {{/each}} --}}
+  </div>
+  <div class="card-footer text-body-secondary">
+    <p class="text-white">Created on: {{format_date blog.blog_created}}</p>
+
   </div>
 </div>
- {{!-- {{/if}} --}}
-</form>
-
+{{/each}}
 <script src="./js/profile.js"></script>
