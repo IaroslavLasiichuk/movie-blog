@@ -1,0 +1,19 @@
+<div class="container-sm mt-4">
+  <h1 class="text-center text-white">About Us</h1>
+  <p class="text-center text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, officiis. Iusto aut
+    veniam consectetur distinctio. Quos consequatur voluptates fuga, sequi dolorum nemo ex nostrum autem illum ea
+    accusamus est magnam!</p>
+  <div class="card-group">
+    {{#each persons as |person|}}
+      <div class="card m-2 shadow p-3 mb-5 bg-light opacity-90 rounded">
+      <figure class="row justify-content-center p-2">
+       <img src="{{{person.img}}}" style="width: 40%; height: 120px; border-radius: 50%;" class="card-img-top" alt="">
+    </figure>
+        <div class="card-body">
+          <h5 class="card-title text-black text-center">{{person.first_name }} {{person.last_name}}</h5>
+          <p class="card-text text-black text-center">{{person.text}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

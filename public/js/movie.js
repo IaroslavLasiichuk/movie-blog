@@ -25,6 +25,7 @@ function getMovie(searchText) {
             let movies = data.Search;
             for (let i = 0; i < movies.length; i++) {
                 let title = movies[i].Title;
+                console.log(data);
                 let titleForAttribute = title.replace(/["" & :]/g, '-');
                 let parent = document.querySelector('.main');
                 parent.innerHTML += `
@@ -103,23 +104,23 @@ function getMovie(searchText) {
 
 
 //  Shows movie by default
-//  document.addEventListener('DOMContentLoaded', (event) => {
-//             fetch(`https://www.omdbapi.com/?apikey=d5dbe20a&s=avatar`)
-//                 .then(function (response) {
-//                     return response.json();
-//                 })
-//                 .then(function (data) {
-//                     let movies = data.Search;
-//                     document.querySelector('.heading').textContent =`${'Upcoming movie'}`;
-//                     document.querySelector('.title-movie').textContent =`${ movies[2].Title}`;
-//                     document.querySelector('.subtitle-movie').textContent = `${'Year'} ${movies[2].Year}`;
-//                     document.querySelector('.poster').src = movies[2].Poster;
-//                     document.querySelector('.id-movie').href = `http://imdb.com/title/${movies[2].imdbID}`;
-//                 })
-//                 .catch((err) => {
-//                     showError(err);
-//                 });
-//  });
+ document.addEventListener('DOMContentLoaded', (event) => {
+            fetch(`https://www.omdbapi.com/?apikey=ca2803b5&s=thor`)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    let movies = data.Search;
+                    // document.querySelector('.heading').textContent =`${'Upcoming movie'}`;
+                    document.querySelector('.title-movie').textContent =`${ movies[2].Title}`;
+                    // document.querySelector('.subtitle-movie').textContent = `${'Year'} ${movies[2].Year}`;
+                    document.querySelector('.poster').src = movies[2].Poster;
+                    document.querySelector('.id-movie').href = `http://imdb.com/title/${movies[2].imdbID}`;
+                })
+                .catch((err) => {
+                //   console.log("error");
+                });
+ });
 
 //  Delete list of movies
 // function handleRemoveItem() {
