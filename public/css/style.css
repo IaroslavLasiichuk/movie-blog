@@ -63,3 +63,7 @@ color: whitesmoke;
     background-color: rgb(16, 16, 16);
     box-shadow: 10px 5px 5px rgb(37, 37, 37);
 }
+
+.carousel-caption{
+    bottom: 50px;
+}
