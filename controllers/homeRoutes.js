@@ -5,7 +5,11 @@ const withAuth = require('../utilis/auth');
 // Render the home page.
 router.get('/', async (req, res) => {
   try {
-    res.render('home');
+    const dbBLogData = await Blog.findAll();
+    const blogs = dbBLogData.map((blog) => blog.get({ plain: true }));
+    res.render('home', {
+      blogs
+    });
   } catch (err) {
  res.status(500).json(err);
   }
@@ -31,7 +35,6 @@ router.get('/blog',withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: Blog }],
     });
-
     const user = userData.get({ plain: true });
     // Serialize data so the template can read it
     return res.render('blog', {

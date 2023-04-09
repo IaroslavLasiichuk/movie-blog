@@ -29,13 +29,11 @@
     <h5 class="card-title text-white">{{blog.blog_title}}</h5>
     <p class="card-text text-white">{{blog.blog_content}}</p>
      <textarea class="form-control" placeholder="Edit post" id="post-content-edit" style="height: 100px"></textarea>
-       <button data-id="{{blog.id}}" class="btn btn-edit btn-primary mt-2">Edit</button>
-    <button data-id="{{blog.id}}" class="btn btn-danger mt-2">Delete</button>
-  
+    <button data-edit="{{blog.id}}" class="btn btn-edit btn-primary mt-2">Edit</button>
+    <button data-delete="{{blog.id}}" class="btn btn-delete btn-danger mt-2">Delete</button>
   </div>
   <div class="card-footer text-body-secondary">
     <p class="text-white">Created on: {{format_date blog.blog_created}}</p>
-
   </div>
 </div>
 {{/each}}
