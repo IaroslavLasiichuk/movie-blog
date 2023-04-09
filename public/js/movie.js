@@ -30,7 +30,7 @@ function getMovie(searchText) {
                 parent.innerHTML += `
                     <div class="carousel-item">
                         <img src="${movies[i].Poster}" class="img-fluid"" alt="${"Poster for"}${movies[i].Title}">
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-none d-md-block fixed-bottom">
                             <h5>${movies[i].Title}</h5>
                             <p>Some representative placeholder content for the first slide.</p>
                             <a href="http://imdb.com/title/${movies[i].imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
