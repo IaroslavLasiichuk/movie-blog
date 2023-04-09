@@ -23,26 +23,30 @@ function getMovie(searchText) {
         })
         .then(function (data) {
             let movies = data.Search;
+            let parent = document.querySelector('.slide-movie');
             for (let i = 0; i < movies.length; i++) {
                 let title = movies[i].Title;
-                console.log(data);
                 let titleForAttribute = title.replace(/["" & :]/g, '-');
-                let parent = document.querySelector('.main');
                 parent.innerHTML += `
-                <article class="flex-column box mt-3">
-                <p class=" has-text-weight-bold" >${movies[i].Title}</p>
-                    <p class="" >${movies[i].Year}</p>
-                    <figure>
-                    <img src="${movies[i].Poster} alt="${"Poster for"}${movies[i].Title}"></figure> 
-                    <a href="http://imdb.com/title/${movies[i].imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
-                </article>`
+                    <div class="carousel-item">
+                        <img src="${movies[i].Poster}" class="img-fluid"" alt="${"Poster for"}${movies[i].Title}">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>${movies[i].Title}</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
+                            <a href="http://imdb.com/title/${movies[i].imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
+                        </div>
+                    </div>
+                `;
             }
+            // Add active class to first slide
+            parent.querySelector('.carousel-item:first-child').classList.add('active');
         })
         .catch((err) => {
             // showError(err);
         });
-    document.querySelector(".main").innerHTML = '';
+    document.querySelector(".slide-movie").innerHTML = '';
 }
+
 
 // Show error message
 // function showError() {
@@ -104,23 +108,23 @@ function getMovie(searchText) {
 
 
 //  Shows movie by default
- document.addEventListener('DOMContentLoaded', (event) => {
-            fetch(`https://www.omdbapi.com/?apikey=ca2803b5&s=thor`)
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (data) {
-                    let movies = data.Search;
-                    // document.querySelector('.heading').textContent =`${'Upcoming movie'}`;
-                    document.querySelector('.title-movie').textContent =`${ movies[2].Title}`;
-                    // document.querySelector('.subtitle-movie').textContent = `${'Year'} ${movies[2].Year}`;
-                    document.querySelector('.poster').src = movies[2].Poster;
-                    document.querySelector('.id-movie').href = `http://imdb.com/title/${movies[2].imdbID}`;
-                })
-                .catch((err) => {
-                //   console.log("error");
-                });
- });
+//  document.addEventListener('DOMContentLoaded', (event) => {
+//             fetch(`https://www.omdbapi.com/?apikey=ca2803b5&s=thor`)
+//                 .then(function (response) {
+//                     return response.json();
+//                 })
+//                 .then(function (data) {
+//                     let movies = data.Search;
+//                     // document.querySelector('.heading').textContent =`${'Upcoming movie'}`;
+//                     document.querySelector('.title-movie').textContent =`${ movies[2].Title}`;
+//                     // document.querySelector('.subtitle-movie').textContent = `${'Year'} ${movies[2].Year}`;
+//                     document.querySelector('.poster').src = movies[2].Poster;
+//                     document.querySelector('.id-movie').href = `http://imdb.com/title/${movies[2].imdbID}`;
+//                 })
+//                 .catch((err) => {
+//                 //   console.log("error");
+//                 });
+//  });
 
 //  Delete list of movies
 // function handleRemoveItem() {

@@ -17,7 +17,7 @@ const personData = [
       first_name: "Joseph",
       last_name: "S.Ortega",
       text: "Some text about Joseph",
-      img: "/img/8L0A0474.jpg",
+      img: "/img/IMG_5309.JPG",
     },
     {
       first_name: "Axel",

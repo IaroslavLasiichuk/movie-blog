@@ -1,6 +1,5 @@
 const newPost = async (event) => {
     event.preventDefault();
-  
     const blog_title = document.querySelector('#post-title').value.trim();
     const blog_content = document.querySelector('#post-content').value.trim();
   if (blog_title && blog_content) {
@@ -24,9 +23,10 @@ const newPost = async (event) => {
     .querySelector('.form-post')
     .addEventListener('submit', newPost);
 
-    const delButtonHandler = async (event) => {
-      if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id');
+const delButtonHandler = async (event) => {
+      console.log("dfsf");
+      if (event.target.hasAttribute('data-delete')) {
+        const id = event.target.getAttribute('data-delete');
     console.log(id);
         const response = await fetch(`/api/blog/${id}`, {
           method: 'DELETE',
@@ -39,16 +39,15 @@ const newPost = async (event) => {
         }
       }
     };
-    
-    document.querySelectorAll('.btn-danger').forEach(button => {
+    document.querySelectorAll('.btn-delete').forEach(button => {
       button.addEventListener('click', delButtonHandler);
     });
 
 const editButtonHandler = async (event) => {
   const blog_content = document.querySelector('#post-content-edit').value;
-      if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id');
-    console.log(id);
+      if (event.target.hasAttribute('data-edit')) {
+        const id = event.target.getAttribute('data-edit');
+        console.log(id);
         const response = await fetch(`/api/blog/${id}`, {
           method: 'PUT',
           body: JSON.stringify({blog_content}),
@@ -56,7 +55,6 @@ const editButtonHandler = async (event) => {
               'Content-Type': 'application/json',
          }
         });
-    console.log(response);
         if (response.ok) {
           document.location.replace('/blog');
         } else {
