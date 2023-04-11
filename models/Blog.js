@@ -24,7 +24,6 @@ Blog.init(
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
-        
     },
     {
         sequelize,

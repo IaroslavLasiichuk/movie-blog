@@ -3,7 +3,6 @@ const newPost = async (event) => {
     const blog_title = document.querySelector('#post-title').value.trim();
     const blog_content = document.querySelector('#post-content').value.trim();
   if (blog_title && blog_content) {
-      console.log(blog_title);
       const response = await fetch(`/api/blog`, {
         method: 'POST',
         body: JSON.stringify({ blog_title, blog_content}),
@@ -44,6 +43,7 @@ const delButtonHandler = async (event) => {
     });
 
 const editButtonHandler = async (event) => {
+  event.preventDefault();
   const blog_content = document.querySelector('#post-content-edit').value;
       if (event.target.hasAttribute('data-edit')) {
         const id = event.target.getAttribute('data-edit');
@@ -66,3 +66,4 @@ const editButtonHandler = async (event) => {
     document.querySelectorAll('.btn-edit').forEach(button => {
       button.addEventListener('click', editButtonHandler);
     });
+
