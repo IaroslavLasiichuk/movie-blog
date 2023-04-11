@@ -1,11 +1,11 @@
 <div class="container-sm mt-4">
   <h1 class="text-center text-white">About Us</h1>
   <p class="text-center text-white">The Movie Dudes realized that current movie review sites weren't that great. So we decided to improve the experience and process by allowing for real user reviews, blogs, and mosre importantly to have more consistently positive experiences watching movies that suit your own unique taste. The Movie Dudes want to make sure that you don't ever have to watch a movie dud! </p>
-  <div class="card-group">
+  <div class="card-group col-about">
     {{#each persons as |person|}}
-      <div class="card m-2 shadow p-3 mb-5 bg-light opacity-90 rounded ">
+      <div class="card  m-2 shadow p-3 mb-5 bg-light opacity-90 rounded ">
       <figure class="row justify-content-center p-2">
-       <img src="{{{person.img}}}" style="width: 45%; height: 120px; border-radius: 50%;" class="card-img-top" alt="">
+       <img src="{{{person.img}}}" style="width: 45%; height: 120px; border-radius: 50%;" class="card-img-top img-about" alt="">
     </figure>
         <div class="card-body">
           <h5 class="card-title text-black text-center">{{person.first_name }} {{person.last_name}}</h5>
