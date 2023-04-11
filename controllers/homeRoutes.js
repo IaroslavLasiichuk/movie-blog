@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     const dbBLogData = await Blog.findAll();
     const blogs = dbBLogData.map((blog) => blog.get({ plain: true }));
     res.render('home', {
-      blogs
+      blogs,
     });
   } catch (err) {
  res.status(500).json(err);

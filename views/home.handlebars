@@ -2,29 +2,62 @@
 <div class="container text-center">
   <div class="row align-items-center">
     <div class="col">
-   <h1 id= "title" class="text-white text-center">Welcome to Movie Dudes</h1>
-   <p id= "description" class="d-flex align-content-end flex-wrap text-white text-center">The one stop you have to make for all of your movie needs! Read or write reviews for various movies, and find out what people truly think of a movie you are interested in!</p>
+      <h1 id="title" class="text-white text-center">Welcome to Movie Dudes</h1>
+      <p id="description" class="d-flex align-content-end flex-wrap text-white text-center">The one stop you have to
+        make for all of your movie needs! Read or write reviews for various movies, and find out what people truly think
+        of a movie you are interested in!</p>
     </div>
   </div>
-
-  {{!-- <div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner slide-review">
-    <h2>Most recent reviews</h2>
-    {{#each blogs as |blog|}}
-    <div class="carousel-item active ">
-     <p class="text-white text-center slide-text">{{blog.blog_content}}</p>
+  {{!-- The carousel for review --}}
+  <h2 class="mt-4">Most recent reviews</h2>
+  <div id="carouselExample" class="carousel slide w-100">
+    <div class="carousel-inner ">
+      <div class="carousel-item active">
+        <h5 class="d-block w-100">Avatar</h5>
+        <p class="d-block w-100"><em>Definitely was a 'Earth Day' story but I liked it. I'm not sure why people are so hard
+          on the Avatar movies,<br>
+          do people expect more from James Cameron? I mean look at Titanic, everyone thinks that is great but in the
+          <br>
+          end it has a pretty weak story line, characters and all. I'm not sure why people liked that but not this.</em></p>
+        <br>
+         <p class="text-center text-white">Posted on: Wed Feb 30 2022 22:07:16</p>
+      </div>
+      <div class="carousel-item">
+        <h5 class="d-block w-100 ">The Godfather</h5>
+        <p class="d-block w-100"><em>This must rank as the best film (along with part 2)of all time.An ensemble performance
+          that has no weak spot.<br>
+          Particularly, John Cazale ( Fredo) and Richard Castellano ( Clemenza) give wonderfully understated
+          performances.<br>
+          You just have to believe that Castellano WAS Clemenza, he brings a real touch to his role.</em></p><br>
+           <p class="text-center text-white">Posted on: Tue May 10 2019 12:07:16</p>
+      </div>
+      <div class="carousel-item ">
+        <h5>Schindler's List</h5>
+        <p><em>This movie, Schindler's List, is hands-down without a doubt one of the greatest films I have ever had the
+          pleasure<br>
+          of viewing. Regardless of how much praise I include in my review, I should still think it deserves more. Few
+          movies are actually<br>
+          able to pull tears out of my stubborn eyes, and the two that come right to mind are this one, and It's a
+          Wonderful Life. Schindler's<br>
+          List is a grim portrayal of events in the Holocaust, while at the same time actually bringing light to some of
+          the humanity still there.</em></p><br>
+          <p class="text-center text-white">Posted on: Mon Jun 23 2021 20:07:16</p>
+      </div>
+      {{#each blogs as |blog| }}
+      <div class="carousel-item ">
+        <h5>{{blog.blog_title}}</h5>
+        <p><em>{{blog.blog_content}}</em></p>
+        <p class="text-center text-white">Posted on: {{blog.createdAt}}</p>
+      </div>
+      {{/each}}
     </div>
-    {{/each}}
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
- </div> --}}
 </div>
-
-

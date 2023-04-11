@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/blog');
+      document.location.replace('/movie');
     } else {
       alert(response.statusText);
     }
@@ -48,12 +48,12 @@ const loginForm = document.querySelector('.login-form');
 if (loginForm) {
   loginForm.addEventListener('submit', loginFormHandler);
 } else {
-  // console.error('Login form not found');
+  console.error('Login form not found');
 }
 
 const signupForm = document.querySelector('.signup-form');
 if (signupForm) {
   signupForm.addEventListener('submit', signupFormHandler);
 } else {
-  // console.error('Signup form not found');
+  console.error('Signup form not found');
 }

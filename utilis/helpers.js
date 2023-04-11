@@ -1,11 +1,11 @@
 module.exports = {
-  // format: ()=> (new Date(), "'Today is a' eeee"),
-  // //=> "Today is a Friday"
+  format: ()=> (new Date(), "'Today is a' eeee"),
+  //=> "Today is a Friday"
   
-  // formatDistance: ()=> (subDays(new Date(), 3), new Date(), { addSuffix: true }),
-  // //=> "3 days ago"
+  formatDistance: ()=> (subDays(new Date(), 3), new Date(), { addSuffix: true }),
+  //=> "3 days ago"
   
-  // formatRelative: ()=> (subDays(new Date(), 3), new Date()),
+  formatRelative: ()=> (subDays(new Date(), 3), new Date()),
 
     format_date: (date) => {
       // Format date as MM/DD/YYYY
