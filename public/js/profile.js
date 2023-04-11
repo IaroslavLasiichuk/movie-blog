@@ -1,3 +1,4 @@
+// Creates new post
 const newPost = async (event) => {
     event.preventDefault();
     const blog_title = document.querySelector('#post-title').value.trim();
@@ -42,6 +43,7 @@ const delButtonHandler = async (event) => {
       button.addEventListener('click', delButtonHandler);
     });
 
+// Edit post
 const editButtonHandler = async (event) => {
   event.preventDefault();
   const blog_content = document.querySelector('#post-content-edit').value;

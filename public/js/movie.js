@@ -39,8 +39,9 @@ function getMovie(searchText) {
             showError(err);
         });
 
- }
-// Create buttons
+}
+ 
+// Create new review
 const newReview = async (event) => {
     event.preventDefault();
     const title = event.target.getAttribute('data-title');
@@ -67,7 +68,6 @@ const newReview = async (event) => {
     .querySelector('.btn-submit')
     .addEventListener('click', newReview);
 
-
 //  Shows movie by default
  document.addEventListener('DOMContentLoaded', (event) => {
             fetch(`https://www.omdbapi.com/?apikey=ca2803b5&s=thor`)
@@ -76,13 +76,11 @@ const newReview = async (event) => {
                 })
                 .then(function (data) {
                     let movies = data.Search;
-                    // document.querySelector('.heading').textContent =`${'Upcoming movie'}`;
                     document.querySelector('.title-movie').textContent =`${ movies[2].Title}`;
-                    // document.querySelector('.subtitle-movie').textContent = `${'Year'} ${movies[2].Year}`;
                     document.querySelector('.poster').src = movies[2].Poster;
                     document.querySelector('.id-movie').href = `http://imdb.com/title/${movies[2].imdbID}`;
                 })
                 .catch((err) => {
-                //   console.log("error");
+                  console.log("error");
                 });
  });

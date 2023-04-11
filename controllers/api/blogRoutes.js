@@ -5,9 +5,15 @@ const withAuth = require('../../utilis/auth');
 
 // Create a new post.
 router.post('/', withAuth, async (req, res) => {
-    try {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Blog }],
+    });
+    const user = userData.get({ plain: true });
       const newPost = await Blog.create({
         ...req.body,
+        user,
         user_id: req.session.user_id,
       });
   

@@ -1,7 +1,7 @@
 # Movie Dudes Application
 
 ## Description: 
-Description: The application allows users to search for movies based on title. The application also allows for the user to register to our app to save movies watched, comment, and read critic reviews.
+ The application allows users to search for movies based on title. The application also allows for the user to register to our app to save movies watched, comment, and read critic reviews.
 
 
 ## User story
@@ -34,14 +34,6 @@ The application must include authentication, which must be implemented using exp
 
 All API keys and sensitive information must be protected with environment variables.
 ```
-
-<<<<<<< HEAD
-##  Screenshot
-### File Structure
-![Movie Dudes: Screenshot](./public/img/folders_structure.png)
-=======
-## License 
->>>>>>> a9892b6bbd382a696f7b3a12a0906254d3a0ebc9
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
