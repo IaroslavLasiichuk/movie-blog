@@ -63,7 +63,7 @@ Link to deployed application on HEROKU.
 
      mysql -root -p
 
-     source.sql
+     schema.sql
 
      npm i
 
