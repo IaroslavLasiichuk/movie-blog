@@ -20,11 +20,10 @@ const newPost = async (event) => {
   };
   
   document
-    .querySelector('.form-post')
-    .addEventListener('submit', newPost);
+    .querySelector('.btn-add-post')
+    .addEventListener('click', newPost);
 
 const delButtonHandler = async (event) => {
-      console.log("dfsf");
       if (event.target.hasAttribute('data-delete')) {
         const id = event.target.getAttribute('data-delete');
     console.log(id);

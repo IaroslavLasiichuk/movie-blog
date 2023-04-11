@@ -1,4 +1,4 @@
-<form class="form-post">
+<div class="form-post">
   <div class="container mt-3">
     <h1 class="text-center">Create a post</h1>
     <h2 class="text-white">Welcome, {{user.name}}!</h2>
@@ -18,13 +18,13 @@
           <label class="text-dark" for="floatingTextarea2">Write a post</label>
           <div class="card-footer text-body-secondary">
           </div>
-          <button type="submit" class="btn btn-outline-primary">Add post</button>
+          <button type="submit" class="btn btn-outline-primary btn-add-post">Add post</button>
         </div>
       </div>
-</form>
+</div>
 
 {{#each blogs as |blog|}}
-<h2 class="text-black text-center">Thoughts about {{blog.blog_title}}</h2>
+<h2 class="text-white text-center">Thoughts about {{blog.blog_title}}</h2>
   <div class="card text-center blog-list w-50 container mt-3 mb-5 bg-dark opacity-80">
     <div class="card-header bg-success">
     </div>
