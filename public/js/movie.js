@@ -1,18 +1,19 @@
 // Variables
 const searchButton = document.querySelector('#btn-search');
 const btnSubmit = document.querySelector('.btn-submit');
-const errorMessage = document.querySelector('.modal-err ');
+const errorMessage = document.querySelector('.modal-err');
+const API = 'ca2803b5';
 
 // Start search
 searchButton.addEventListener('click', function (event) {
+  event.preventDefault();
     let searchText = document.querySelector('#input-search-text').value;
     getMovie(searchText);
-    event.preventDefault();
 })
 
 // Search for movie and get data 
 function getMovie(searchText) {
-    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=ca2803b5&s=${searchText}&plot&i`)
+  fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${API}&s=${searchText}&plot&i`)
             .then(function (response) {
             return response.json();
         })
@@ -30,7 +31,7 @@ function getMovie(searchText) {
                     <p class="text-white" >${movies[i].Year}</p>
                     <figure>
                     <img src="${movies[i].Poster} alt="${"Poster for"}${movies[i].Title}"></figure> 
-                    <a href="http://imdb.com/title/${movies[i].imdbID}" target="_blank" class="btn btn-primary text-center">View IMDB</a>
+                    <a href="https://imdb.com/title/${movies[i].imdbID}" target="_blank" class="btn btn-primary text-center">View IMDB</a>
                     <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn mt-1 buttons btn-secondary" id=${titleForAttribute} data-title = ${titleForAttribute}>Add review</button>
                 </article>`
             }
@@ -70,7 +71,7 @@ const newReview = async (event) => {
 
 //  Shows movie by default
  document.addEventListener('DOMContentLoaded', (event) => {
-            fetch(`https://www.omdbapi.com/?apikey=ca2803b5&s=thor`)
+            fetch(`https://www.omdbapi.com/?apikey=${API}&s=thor`)
                 .then(function (response) {
                     return response.json();
                 })
@@ -78,7 +79,7 @@ const newReview = async (event) => {
                     let movies = data.Search;
                     document.querySelector('.title-movie').textContent =`${ movies[2].Title}`;
                     document.querySelector('.poster').src = movies[2].Poster;
-                    document.querySelector('.id-movie').href = `http://imdb.com/title/${movies[2].imdbID}`;
+                    document.querySelector('.id-movie').href = `https://imdb.com/title/${movies[2].imdbID}`;
                 })
                 .catch((err) => {
                   console.log("error");
