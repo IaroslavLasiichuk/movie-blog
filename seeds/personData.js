@@ -11,7 +11,7 @@ const personData = [
       first_name: "Sutton",
       last_name: "Charpentier",
       text: "Some text about Sutton",
-      img: "/img/8L0A0474.jpg",
+      img: "/img/20230409_111908.jpg",
     },
     {
       first_name: "Joseph",
@@ -23,7 +23,7 @@ const personData = [
       first_name: "Axel",
       last_name: "Irias",
       text: "Some text about Axel",
-      img: "/img/8L0A0474.jpg",
+      img: "/img/IMG_0717.jpeg",
     },
   ];
 
