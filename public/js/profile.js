@@ -11,7 +11,7 @@ const newPost = async (event) => {
           'Content-Type': 'application/json',
         },
       });
-      if (response.ok) {
+    if (response.ok) {
         document.location.replace('/blog');
       } else {
         alert('Failed to create post');
@@ -45,10 +45,9 @@ const delButtonHandler = async (event) => {
 // Edit post
 const editButtonHandler = async (event) => {
   event.preventDefault();
-  const blog_content = document.querySelector('#post-content-edit').value;
+  const id = event.target.getAttribute('data-edit');
+  const blog_content = document.querySelector(`#post-content-edit-${id}`).value;
       if (event.target.hasAttribute('data-edit')) {
-        const id = event.target.getAttribute('data-edit');
-        console.log(id);
         const response = await fetch(`/api/blog/${id}`, {
           method: 'PUT',
           body: JSON.stringify({blog_content}),
@@ -65,6 +64,6 @@ const editButtonHandler = async (event) => {
     };
     
     document.querySelectorAll('.btn-edit').forEach(button => {
-      button.addEventListener('click', editButtonHandler);
+      button.addEventListener('click',editButtonHandler);
     });
 
