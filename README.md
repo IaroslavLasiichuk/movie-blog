@@ -3,6 +3,7 @@
 ## Description: 
 Description: The application allows users to search for movies based on title. The application also allows for the user to register to our app to save movies watched, comment, and read critic reviews.
 
+
 ## User story
 ```md
 As a user, I want to be able to retrieve and add new data using a RESTful API built with Node.js and Express.js. 
@@ -34,12 +35,76 @@ The application must include authentication, which must be implemented using exp
 All API keys and sensitive information must be protected with environment variables.
 ```
 
+<<<<<<< HEAD
 ##  Screenshot
 ### File Structure
 ![Movie Dudes: Screenshot](./public/img/folders_structure.png)
+=======
+## License 
+>>>>>>> a9892b6bbd382a696f7b3a12a0906254d3a0ebc9
 
-## Deployable Link to Website/Application: 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Link
+Link to deployed application on HEROKU.
+> https://intense-island-90811.herokuapp.com/
+
+
+## Table of Contents
+  
+  * [Installation](#installation)
+
+  * [Technologies](#technologies)
+
+  * [Screenshot](#screenshot)
+  
+  * [Contributing](#contributing)
+
+  * [Suport](#suport)
+
+  * [Acknowledgement ](#Acknowledgement )
+  
+  * [Questions](#questions)
+
+  ## Installation
+  To install necessary dependencies, run the following command:
+
+     mysql -root -p
+
+     source.sql
+
+     npm i
+
+     npm run seed
+
+     npm start
+
+
+## Technologies
+1. Javascript
+2. NodeJs
+3. Express
+4. MySql
+
+##  Node modules
+     bcrypt
+     connect-session-sequelize
+     date-fns
+     dotenv
+     express
+     express-handlebars
+     express-session
+     handlebars
+     mysql2
+     sequelize
+
+## Screenshot
+![Screenshot](./public/img/Image.png)
+
+## Contributing
+
+Contributing
+Contributions are welcome! If you would like to contribute to this project, please fork the repository and submit a pull request.
 
 ## Support
 
@@ -47,19 +112,16 @@ All API keys and sensitive information must be protected with environment variab
 
 - [Google](https://Google.com)
 
-## Contact
-
-- [Contact - Full Stack Coder - Iaroslav Lasiichuk](mailto:lasiichuki@gmail.com)
-- [Contact - Full Stack Coder - Joseph S. Ortega](mailto:MyAgentOrtega@gmail.com)
-- [Contact - Full Stack Coder - Axel Irias](mailto:axel.irias12@gmail.com)
-- [Contact - Full Stack Coder - Sutton Charpentier](mailto:uttoncharpentier@gmail.com)
-
-
 
 ## Acknowledgement 
 
 Authors and acknowledgement: Thank you to all our peers, tutors, T/A's, and instructors that helped me along the way!
 
-## License 
+## Questions
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+If you have any questions about this project, please feel free to reach out to me:
+  
+- [Contact - Full Stack Coder - Iaroslav Lasiichuk](mailto:lasiichuki@gmail.com)
+- [Contact - Full Stack Coder - Joseph S. Ortega](mailto:MyAgentOrtega@gmail.com)
+- [Contact - Full Stack Coder - Axel Irias](mailto:axel.irias12@gmail.com)
+- [Contact - Full Stack Coder - Sutton Charpentier](mailto:uttoncharpentier@gmail.com)
