@@ -36,7 +36,7 @@ All API keys and sensitive information must be protected with environment variab
 
 ##  Screenshot
 ### File Structure
-![MOvie Dudes: Screenshot](./public/img/folders_structure.png)
+![Movie Dudes: Screenshot](./public/img/folders_structure.png)
 
 ## Deployable Link to Website/Application: 
 
