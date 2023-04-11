@@ -16,7 +16,7 @@ const personData = [
     {
       first_name: "Joseph",
       last_name: "S.Ortega",
-      text: "Some text about Joseph",
+      text: "Joseph graduated from the University of Denver with a Business Degree and is currently practicing Full Stack Web Development at his Alma Mater.",
       img: "/img/IMG_5309.JPG",
     },
     {

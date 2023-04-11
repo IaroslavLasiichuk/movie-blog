@@ -35,7 +35,13 @@ The application must include authentication, which must be implemented using exp
 All API keys and sensitive information must be protected with environment variables.
 ```
 
+<<<<<<< HEAD
+##  Screenshot
+### File Structure
+![Movie Dudes: Screenshot](./public/img/folders_structure.png)
+=======
 ## License 
+>>>>>>> a9892b6bbd382a696f7b3a12a0906254d3a0ebc9
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
