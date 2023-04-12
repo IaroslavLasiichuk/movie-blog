@@ -59,12 +59,16 @@ Link to deployed application on HEROKU.
   * [Questions](#questions)
 
   ## Installation
-  To install necessary dependencies, run the following command:
-
+  To install necessary dependencies and start application run the following command:
+  
+     db folder⬇️
+     
      mysql -root -p
 
-     schema.sql
+     source schema.sql
 
+     root folder⬇️
+     
      npm i
 
      npm run seed
@@ -89,6 +93,7 @@ Link to deployed application on HEROKU.
      handlebars
      mysql2
      sequelize
+     awesome-notifications
 
 ## Screenshot
 ![Screenshot](./public/img/Image.png)
