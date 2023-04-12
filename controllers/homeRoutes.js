@@ -27,9 +27,11 @@ router.get('/movie', withAuth, async (req, res) => {
 });
 
 // GET all posts from blog
-router.get('/blog',withAuth, async (req, res) => {
+router.get('/blog', withAuth, async (req, res) => {
   try {
-    const dbBLogData = await Blog.findAll();
+    const dbBLogData = await Blog.findAll({
+      where: { user_id: req.session.user_id }
+    });
     const blogs = dbBLogData.map((blog) => blog.get({ plain: true }));
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
@@ -43,7 +45,7 @@ router.get('/blog',withAuth, async (req, res) => {
       logged_in: req.session.logged_in
     });
   } catch (err) {
-   return  res.status(500).json(err);
+   return res.status(500).json(err);
   }
 });
 

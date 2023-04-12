@@ -18,19 +18,17 @@ const newPost = async (event) => {
       }
     }
   };
-  
   document
     .querySelector('.btn-add-post')
     .addEventListener('click', newPost);
 
+// Delete post
 const delButtonHandler = async (event) => {
       if (event.target.hasAttribute('data-delete')) {
         const id = event.target.getAttribute('data-delete');
-    console.log(id);
         const response = await fetch(`/api/blog/${id}`, {
           method: 'DELETE',
         });
-    console.log(response);
         if (response.ok) {
           document.location.replace('/blog');
         } else {
@@ -62,7 +60,6 @@ const editButtonHandler = async (event) => {
         }
       }
     };
-    
     document.querySelectorAll('.btn-edit').forEach(button => {
       button.addEventListener('click',editButtonHandler);
     });
