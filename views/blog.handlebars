@@ -30,12 +30,12 @@
     </div>
     <div class="card-body row justify-content-center">
       <h5 class="card-title text-white">{{blog.blog_title}}</h5>
-      <p class="card-text text-white">{{blog.blog_content}}</p>
+      <p class="card-text text-black bg-white">{{blog.blog_content}}</p>
       <textarea data-text="{{blog.id}}" class="form-control" placeholder="Edit post" id="post-content-edit-{{blog.id}}" style="height: 100px"></textarea>
-      <button data-edit="{{blog.id}}" class="btn btn-edit btn-primary mt-2">Edit</button>
-      <button data-delete="{{blog.id}}" class="btn btn-delete btn-danger mt-2">Delete</button>
     </div>
     <div class="card-footer text-body-secondary">
+      <button data-edit="{{blog.id}}" class="btn btn-edit btn-outline-success mt-2">Edit</button>
+      <button data-delete="{{blog.id}}" class="btn btn-delete btn-outline-danger mt-2">Delete</button>
       <p class="text-white">Created on: {{time}}</p>
     </div>
   </div>
