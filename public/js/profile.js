@@ -13,8 +13,8 @@ const newPost = async (event) => {
       });
     if (response.ok) {
         document.location.replace('/blog');
-      } else {
-        alert('Failed to create post');
+    } else {
+      new AWN().alert();
       }
     }
   };
@@ -32,7 +32,7 @@ const delButtonHandler = async (event) => {
         if (response.ok) {
           document.location.replace('/blog');
         } else {
-          alert('Failed to delete blog');
+          new AWN().alert();
         }
       }
     };
@@ -56,11 +56,10 @@ const editButtonHandler = async (event) => {
         if (response.ok) {
           document.location.replace('/blog');
         } else {
-          alert('Failed to edit blog');
+          new AWN().alert();
         }
       }
     };
     document.querySelectorAll('.btn-edit').forEach(button => {
       button.addEventListener('click',editButtonHandler);
     });
-

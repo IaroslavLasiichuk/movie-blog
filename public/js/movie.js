@@ -36,7 +36,7 @@ function getMovie(searchText) {
             }
         })
         .catch((err) => {
-            showError(err);
+          new AWN().alert();
         });
 }
  
@@ -55,8 +55,9 @@ const newReview = async (event) => {
           'Content-Type': 'application/json',
         },
       });
-      if (response.ok) {
-        document.location.replace('/movie');
+  
+    if (response.ok) {
+      new AWN().success('Custom success message', {durations: {success: 0}})
       } else {
         alert('Failed to create post');
       }
@@ -80,6 +81,6 @@ const newReview = async (event) => {
                     document.querySelector('.id-movie').href = `https://imdb.com/title/${movies[2].imdbID}`;
                 })
                 .catch((err) => {
-                  console.log("error");
+                  new AWN().alert();
                 });
  });
