@@ -1,6 +1,7 @@
 // Variables
 const searchButton = document.querySelector('#btn-search');
 const btnSubmit = document.querySelector('.btn-submit');
+const mainEl = document.querySelector('.main');
 const API = 'ca2803b5';
 
 // Start search
@@ -16,9 +17,8 @@ function getMovie(searchText) {
             .then(function (response) {
             return response.json();
         })
-        .then(function (data) {
+    .then(function (data) {
             let movies = data.Search;
-            console.log(movies);
             for (let i = 0; i < movies.length; i++) {
                 let title = movies[i].Title;
                 localStorage.setItem('movieId', title);
@@ -36,15 +36,14 @@ function getMovie(searchText) {
             }
         })
         .catch((err) => {
-          new AWN().alert();
+          new AWN().alert(err);
         });
+        mainEl.innerHTML = '';
 }
  
 // Create new review
 const newReview = async (event) => {
-    event.preventDefault();
-    const title = event.target.getAttribute('data-title');
-    console.log(title);
+  event.preventDefault();
     const blog_title = document.querySelector('#review-title').value.trim();
     const blog_content = document.querySelector('#review-cotent').value.trim();
   if (blog_title && blog_content) {
@@ -75,12 +74,13 @@ const newReview = async (event) => {
                     return response.json();
                 })
                 .then(function (data) {
-                    let movies = data.Search;
+                  let movies = data.Search;
                     document.querySelector('.title-movie').textContent =`${ movies[2].Title}`;
                     document.querySelector('.poster').src = movies[2].Poster;
                     document.querySelector('.id-movie').href = `https://imdb.com/title/${movies[2].imdbID}`;
+                    document.querySelector('.btn-movie-default').setAttribute('data-title', movies[2].Title);
                 })
                 .catch((err) => {
-                  new AWN().alert();
+                  new AWN().alert(err);
                 });
  });
