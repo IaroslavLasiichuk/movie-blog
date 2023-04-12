@@ -1,7 +1,6 @@
 // Variables
 const searchButton = document.querySelector('#btn-search');
 const btnSubmit = document.querySelector('.btn-submit');
-const errorMessage = document.querySelector('.modal-err');
 const API = 'ca2803b5';
 
 // Start search
@@ -39,7 +38,6 @@ function getMovie(searchText) {
         .catch((err) => {
             showError(err);
         });
-
 }
  
 // Create new review
