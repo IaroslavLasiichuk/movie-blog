@@ -1,7 +1,7 @@
 # Movie Dudes Application
 
 ## Description: 
-Description: The application allows users to search for movies based on title. The application also allows for the user to register to our app to save movies watched, comment, and read critic reviews.
+ The application allows users to search for movies based on title. The application also allows for the user to register to our app to save movies watched, comment, and read critic reviews.
 
 
 ## User story
@@ -35,14 +35,6 @@ The application must include authentication, which must be implemented using exp
 All API keys and sensitive information must be protected with environment variables.
 ```
 
-<<<<<<< HEAD
-##  Screenshot
-### File Structure
-![Movie Dudes: Screenshot](./public/img/folders_structure.png)
-=======
-## License 
->>>>>>> a9892b6bbd382a696f7b3a12a0906254d3a0ebc9
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Link
@@ -67,12 +59,16 @@ Link to deployed application on HEROKU.
   * [Questions](#questions)
 
   ## Installation
-  To install necessary dependencies, run the following command:
-
+  To install necessary dependencies and start application run the following command:
+  
+     db folder⬇️
+     
      mysql -root -p
 
-     source.sql
+     source schema.sql
 
+     root folder⬇️
+     
      npm i
 
      npm run seed
@@ -97,6 +93,7 @@ Link to deployed application on HEROKU.
      handlebars
      mysql2
      sequelize
+     awesome-notifications
 
 ## Screenshot
 ![Screenshot](./public/img/Image.png)

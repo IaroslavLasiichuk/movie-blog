@@ -4,7 +4,7 @@ const personData = [
     {
       first_name: "Iaroslav",
       last_name: "Lasiichuk",
-      text: "Something about me.",
+      text: "Hi, everyone!I'm a young aspiring junior web developer with a passion for technology and a strong desire to make a difference in the world. I'm constantly seeking new challenges and opportunities to learn and grow as a developer",
       img: "/img/8L0A0474.jpg",
     },
     {
@@ -22,7 +22,7 @@ const personData = [
     {
       first_name: "Axel",
       last_name: "Irias",
-      text: "Some text about Axel",
+      text: "Iam currently in construction doing Fire Sprinkler Installing, needed a change so i enrolled to become a Full stack developer",
       img: "/img/IMG_0717.jpeg",
     },
   ];

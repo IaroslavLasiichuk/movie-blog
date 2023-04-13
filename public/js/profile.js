@@ -1,3 +1,4 @@
+// Creates new post
 const newPost = async (event) => {
     event.preventDefault();
     const blog_title = document.querySelector('#post-title').value.trim();
@@ -10,31 +11,28 @@ const newPost = async (event) => {
           'Content-Type': 'application/json',
         },
       });
-      if (response.ok) {
+    if (response.ok) {
         document.location.replace('/blog');
-      } else {
-        alert('Failed to create post');
+    } else {
+      new AWN().alert();
       }
     }
   };
-  
   document
-    .querySelector('.form-post')
-    .addEventListener('submit', newPost);
+    .querySelector('.btn-add-post')
+    .addEventListener('click', newPost);
 
+// Delete post
 const delButtonHandler = async (event) => {
-      console.log("dfsf");
       if (event.target.hasAttribute('data-delete')) {
         const id = event.target.getAttribute('data-delete');
-    console.log(id);
         const response = await fetch(`/api/blog/${id}`, {
           method: 'DELETE',
         });
-    console.log(response);
         if (response.ok) {
           document.location.replace('/blog');
         } else {
-          alert('Failed to delete blog');
+          new AWN().alert();
         }
       }
     };
@@ -42,12 +40,12 @@ const delButtonHandler = async (event) => {
       button.addEventListener('click', delButtonHandler);
     });
 
+// Edit post
 const editButtonHandler = async (event) => {
   event.preventDefault();
-  const blog_content = document.querySelector('#post-content-edit').value;
+  const id = event.target.getAttribute('data-edit');
+  const blog_content = document.querySelector(`#post-content-edit-${id}`).value;
       if (event.target.hasAttribute('data-edit')) {
-        const id = event.target.getAttribute('data-edit');
-        console.log(id);
         const response = await fetch(`/api/blog/${id}`, {
           method: 'PUT',
           body: JSON.stringify({blog_content}),
@@ -58,12 +56,10 @@ const editButtonHandler = async (event) => {
         if (response.ok) {
           document.location.replace('/blog');
         } else {
-          alert('Failed to edit blog');
+          new AWN().alert();
         }
       }
     };
-    
     document.querySelectorAll('.btn-edit').forEach(button => {
-      button.addEventListener('click', editButtonHandler);
+      button.addEventListener('click',editButtonHandler);
     });
-

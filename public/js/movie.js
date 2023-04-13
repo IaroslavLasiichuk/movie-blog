@@ -1,24 +1,24 @@
 // Variables
 const searchButton = document.querySelector('#btn-search');
 const btnSubmit = document.querySelector('.btn-submit');
-const errorMessage = document.querySelector('.modal-err ');
+const mainEl = document.querySelector('.main');
+const API = 'ca2803b5';
 
 // Start search
 searchButton.addEventListener('click', function (event) {
+  event.preventDefault();
     let searchText = document.querySelector('#input-search-text').value;
     getMovie(searchText);
-    event.preventDefault();
 })
 
 // Search for movie and get data 
 function getMovie(searchText) {
-    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=ca2803b5&s=${searchText}&plot&i`)
+  fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${API}&s=${searchText}&plot&i`)
             .then(function (response) {
             return response.json();
         })
-        .then(function (data) {
+    .then(function (data) {
             let movies = data.Search;
-            console.log(movies);
             for (let i = 0; i < movies.length; i++) {
                 let title = movies[i].Title;
                 localStorage.setItem('movieId', title);
@@ -30,21 +30,20 @@ function getMovie(searchText) {
                     <p class="text-white" >${movies[i].Year}</p>
                     <figure>
                     <img src="${movies[i].Poster} alt="${"Poster for"}${movies[i].Title}"></figure> 
-                    <a href="http://imdb.com/title/${movies[i].imdbID}" target="_blank" class="btn btn-primary text-center">View IMDB</a>
+                    <a href="https://imdb.com/title/${movies[i].imdbID}" target="_blank" class="btn btn-primary text-center">View IMDB</a>
                     <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn mt-1 buttons btn-secondary" id=${titleForAttribute} data-title = ${titleForAttribute}>Add review</button>
                 </article>`
             }
         })
         .catch((err) => {
-            showError(err);
+          new AWN().alert(err);
         });
-
- }
-// Create buttons
+        mainEl.innerHTML = '';
+}
+ 
+// Create new review
 const newReview = async (event) => {
-    event.preventDefault();
-    const title = event.target.getAttribute('data-title');
-    console.log(title);
+  event.preventDefault();
     const blog_title = document.querySelector('#review-title').value.trim();
     const blog_content = document.querySelector('#review-cotent').value.trim();
   if (blog_title && blog_content) {
@@ -55,8 +54,9 @@ const newReview = async (event) => {
           'Content-Type': 'application/json',
         },
       });
-      if (response.ok) {
-        document.location.replace('/movie');
+  
+    if (response.ok) {
+      new AWN().success('Custom success message', {durations: {success: 0}})
       } else {
         alert('Failed to create post');
       }
@@ -67,22 +67,20 @@ const newReview = async (event) => {
     .querySelector('.btn-submit')
     .addEventListener('click', newReview);
 
-
 //  Shows movie by default
  document.addEventListener('DOMContentLoaded', (event) => {
-            fetch(`https://www.omdbapi.com/?apikey=ca2803b5&s=thor`)
+            fetch(`https://www.omdbapi.com/?apikey=${API}&s=thor`)
                 .then(function (response) {
                     return response.json();
                 })
                 .then(function (data) {
-                    let movies = data.Search;
-                    // document.querySelector('.heading').textContent =`${'Upcoming movie'}`;
+                  let movies = data.Search;
                     document.querySelector('.title-movie').textContent =`${ movies[2].Title}`;
-                    // document.querySelector('.subtitle-movie').textContent = `${'Year'} ${movies[2].Year}`;
                     document.querySelector('.poster').src = movies[2].Poster;
-                    document.querySelector('.id-movie').href = `http://imdb.com/title/${movies[2].imdbID}`;
+                    document.querySelector('.id-movie').href = `https://imdb.com/title/${movies[2].imdbID}`;
+                    document.querySelector('.btn-movie-default').setAttribute('data-title', movies[2].Title);
                 })
                 .catch((err) => {
-                //   console.log("error");
+                  new AWN().alert(err);
                 });
  });

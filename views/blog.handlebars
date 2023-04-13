@@ -1,4 +1,4 @@
-<form class="form-post">
+<div class="form-post">
   <div class="container mt-3">
     <h1 class="text-center">Create a post</h1>
     <h2 class="text-white">Welcome, {{user.name}}!</h2>
@@ -9,7 +9,7 @@
       </div>
       <div class="card-body ">
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="text-dark fs-2">What are you thinking?</label>
+          <label for="exampleFormControlInput1" class="text-dark fs-2">What are you thinking,{{user.name}}?</label>
           <input type="text" class="form-control" id="post-title" placeholder="Post Title">
         </div>
         <div class="form-floating">
@@ -18,26 +18,27 @@
           <label class="text-dark" for="floatingTextarea2">Write a post</label>
           <div class="card-footer text-body-secondary">
           </div>
-          <button type="submit" class="btn btn-outline-primary">Add post</button>
+          <button type="submit" class="btn btn-outline-primary btn-add-post">Add post</button>
         </div>
       </div>
-</form>
+</div>
 
 {{#each blogs as |blog|}}
-<h2 class="text-black text-center">Thoughts about {{blog.blog_title}}</h2>
+<h2 class="text-white text-center">Thoughts about {{blog.blog_title}}</h2>
   <div class="card text-center blog-list w-50 container mt-3 mb-5 bg-dark opacity-80">
     <div class="card-header bg-success">
     </div>
     <div class="card-body row justify-content-center">
       <h5 class="card-title text-white">{{blog.blog_title}}</h5>
-      <p class="card-text text-white">{{blog.blog_content}}</p>
-      <textarea class="form-control" placeholder="Edit post" id="post-content-edit" style="height: 100px"></textarea>
-      <button data-edit="{{blog.id}}" class="btn btn-edit btn-primary mt-2">Edit</button>
-      <button data-delete="{{blog.id}}" class="btn btn-delete btn-danger mt-2">Delete</button>
+      <p class="card-text text-black bg-white">{{blog.blog_content}}</p>
+      <textarea data-text="{{blog.id}}" class="form-control" placeholder="Edit post" id="post-content-edit-{{blog.id}}" style="height: 100px"></textarea>
     </div>
     <div class="card-footer text-body-secondary">
-      <p class="text-white">Created on: {{blog.createdAt}}</p>
+      <button data-edit="{{blog.id}}" class="btn btn-edit btn-outline-success mt-2">Edit</button>
+      <button data-delete="{{blog.id}}" class="btn btn-delete btn-outline-danger mt-2">Delete</button>
+      <p class="text-white">Created on: {{time}}</p>
     </div>
   </div>
 {{/each}}
+
 <script src="./js/profile.js"></script>

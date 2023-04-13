@@ -22,6 +22,7 @@ const loginFormHandler = async (event) => {
   }
 };
 
+// Sign up
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -55,5 +56,5 @@ const signupForm = document.querySelector('.signup-form');
 if (signupForm) {
   signupForm.addEventListener('submit', signupFormHandler);
 } else {
-  console.error('Signup form not found');
+  // console.error('Signup form not found');
 }
