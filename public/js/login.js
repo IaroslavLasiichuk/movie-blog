@@ -38,7 +38,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/login');
+      document.location.replace('/movie');
     } else {
       alert(response.statusText);
     }
