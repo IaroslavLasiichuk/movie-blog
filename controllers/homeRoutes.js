@@ -5,7 +5,14 @@ const withAuth = require('../utilis/auth');
 // Render the home page.
 router.get('/', async (req, res) => {
   try {
-    const dbBLogData = await Blog.findAll();
+    const dbBLogData = await Blog.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
     const blogs = dbBLogData.map((blog) => blog.get({ plain: true }));
     res.render('home', {
       blogs,
