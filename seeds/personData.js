@@ -10,7 +10,7 @@ const personData = [
     {
       first_name: "Sutton",
       last_name: "Charpentier",
-      text: "Some text about Sutton",
+      text: "Currently working towards becoming a web developer and has always had a passion for computers and technology.",
       img: "/img/20230409_111908.jpg",
     },
     {
