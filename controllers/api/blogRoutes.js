@@ -7,6 +7,12 @@ const withAuth = require('../../utilis/auth');
 router.post('/', withAuth, async (req, res) => {
     try {
       const newPost = await Blog.create({
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+        ],
         ...req.body,
         user_id: req.session.user_id,
       });
