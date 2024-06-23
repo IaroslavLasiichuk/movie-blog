@@ -5,6 +5,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utilis/helpers');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 // Const sequelize store.
 const sequelize = require('./config/connection');
@@ -17,10 +18,10 @@ const API = process.env.API;
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
-
+console.log(process.env.SECRET_MOVIE);
 // Import sequelize connection
 const sess = {
-  secret: process.env.SECRET,
+  secret: process.env.SECRET_MOVIE,
   cookie: {
     maxAge: 900000,
     httpOnly: true,
